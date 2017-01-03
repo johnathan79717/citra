@@ -33,7 +33,7 @@ void InitializeSession(Service::Interface* self) {
     cmd_buff[0] = IPC::MakeHeader(0x1, 0x1, 0);
     cmd_buff[1] = RESULT_SUCCESS.raw;
 
-    LOG_WARNING(Service_BOSS, "(STUBBED) unk_param=0x%016X, translation=0x%08X, unk_param4=0x%08X",
+    LOG_WARNING(Service_BOSS, "(STUBBED) unk_param=0x%016llX, translation=0x%08X, unk_param4=0x%08X",
                 unk_param, translation, unk_param4);
 }
 
