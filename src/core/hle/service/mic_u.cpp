@@ -97,9 +97,10 @@ static void StartSampling(Interface* self) {
 
     cmd_buff[1] = RESULT_SUCCESS.raw; // No error
     is_sampling = true;
-    LOG_WARNING(Service_MIC, "(STUBBED) called, encoding=%hhu, sample_rate=%hhu, "
+    LOG_WARNING(Service_MIC, "(STUBBED) called, encoding=%u, sample_rate=%u, "
                              "audio_buffer_offset=%d, audio_buffer_size=%u, audio_buffer_loop=%u",
-                encoding, sample_rate, audio_buffer_offset, audio_buffer_size, audio_buffer_loop);
+                static_cast<u32>(encoding), static_cast<u32>(sample_rate), audio_buffer_offset,
+                audio_buffer_size, audio_buffer_loop);
 }
 
 /**
@@ -114,7 +115,7 @@ static void AdjustSampling(Interface* self) {
     u32* cmd_buff = Kernel::GetCommandBuffer();
     sample_rate = static_cast<SampleRate>(cmd_buff[1] & 0xFF);
     cmd_buff[1] = RESULT_SUCCESS.raw; // No error
-    LOG_WARNING(Service_MIC, "(STUBBED) called, sample_rate=%hhu", sample_rate);
+    LOG_WARNING(Service_MIC, "(STUBBED) called, sample_rate=%u", static_cast<u32>(sample_rate));
 }
 
 /**
